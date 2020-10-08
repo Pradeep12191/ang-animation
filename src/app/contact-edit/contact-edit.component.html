@@ -1,0 +1,53 @@
+<mat-toolbar>
+    <button disableRipple mat-icon-button routerLink="/detail/1">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    Edit
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+        <div class="container">
+            <button (click)="change()" mat-button>change</button>
+            <!-- <div [@basic]="basicState" class="box"></div> -->
+            <!-- <div [@move]="moveState" class="red-box"></div> -->
+            <!-- <div [@moveWith]="moveState" class="red-box"></div> -->
+            <div [@group]="expandState" class="red-box"></div>
+
+            <div class="message mat-elevation-z2" [@fold]="foldState">
+                <div class="message-box" (click)="fold()"></div>
+                <div class="message-text-box">
+                    <span class="message-text">Lorem Ipsum is simply dummy text of th.</span>
+                </div>
+            </div>
+
+            <div gdRows>
+                <button mat-button (click)="show = !show">{{ show ? 'Hide' : 'Show'}}</button>
+                <div class="card mat-elevation-z2" @fade *ngIf="show">
+                    Entry Animation
+                </div>
+            </div>
+
+            <div gdRows class="panel mat-elevation-z2">
+                <div class="panel-header" gdColumns="auto auto" gdAlignColumns="center center" gdAlignRows="space-between">
+                    <div class="panel-title">
+                        Demo panel
+                    </div>
+                    <div>
+                        <button  class="expand-icon"  [class.rotate-icon]="panelExpandState === 'collapsed'" mat-icon-button (click)="expand()">
+                            <mat-icon>keyboard_arrow_down</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body" [@panel]="panelExpandState">
+                    <div class="panel-content">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+

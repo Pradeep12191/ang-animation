@@ -1,0 +1,24 @@
+<mat-toolbar>
+    List
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="list" gdRows gdAlignColumns="start start">
+                <div class="list-item" *ngFor="let i of [1, 2]" [routerLink]="['/detail', i]">
+                    <div [class]="'avatar avatar' + i"></div>
+                    <div gdRows>
+                        <div>Name</div>
+                        <div>Destination</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button disableRipple mat-icon-button routerLink="/detail">
+                <mat-icon>arrow_forward</mat-icon>
+            </button> -->
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
